@@ -19,7 +19,7 @@ When you power your device, you'll see the following screen.
 
 ### Connecting to Wi-Fi
 
-Before you can run examples to turn the device into WebThing, you need to connnect it to Wi-Fi. Tap the Wi-Fi button at the top of the screen and the device will scan for available networks. Tapping a network displays an on-screen keyboard that allows you to enter the password.
+Before you can run examples to turn the device into a WebThing, you need to connnect it to Wi-Fi. Tap the Wi-Fi button at the top of the screen and the device will scan for available networks. Tapping a network displays an on-screen keyboard that allows you to enter the password.
 
 <img src="./images/wifi-button.png" width=250><img src="./images/wifi-list.png" width= 250><img src="./images/wifi-keyboard.png" width= 250>
 
@@ -36,13 +36,13 @@ By default, each device has a unique name. You can optionally change the name by
 
 The WebIDE allows you to install JavaScript applications built with the Moddable SDK on your device from the browser. It is an alternative to some of the command line build tools provided by the Moddable SDK.
 
-It is available at [https://ide.moddable.com](https://ide.moddable.com).
+It is available at [https://moddable-ide.netlify.com](https://moddable-ide.netlify.com).
 
 ![](./images/webide.png)
 
 Note that the WebIDE uses [WebUSB](https://developers.google.com/web/updates/2016/03/access-usb-devices-on-the-web) to connect to devices, so it only works in Chrome. If you don't have Chrome already, you can download it [here](https://www.google.com/chrome/).
 
-> The repository for the project is [on GitHub](https://github.com/FWeinb/moddable-webide). Special thanks to [FWeinb](https://github.com/FWeinb) for developing it.
+> The repository for the main project is [on GitHub](https://github.com/FWeinb/moddable-webide). Special thanks to [FWeinb](https://github.com/FWeinb) for developing it. The version used for this workshop is also [on GitHub](https://github.com/lprader/moddable-webide).
 
 <a id="examples"></a>
 ## Running Examples
@@ -51,7 +51,16 @@ A variety of examples are available for you to get started with. There is a basi
 
 <img src="./images/light.gif" width=250><img src="./images/sign.gif" width=250><img src="./images/thermometer.gif" width=250>
 
-To run an example, take the following steps.
+The light and sign do not require any device setup. The thermometer example requires a TMP102 temperature sensor to be plugged into the board in the following configuration:
+
+| TMP102 | oddWires board|
+| :---: | :---: |
+|VCC | 3V3
+|GND | GND
+|SDA | IO21
+|SCL | IO22
+
+To install an example, take the following steps.
 
 1. Go to the Projects view in the WebIDE and click **Import GitHub Gist**.
 
@@ -84,6 +93,8 @@ To run an example, take the following steps.
 7. If the installation is successful, you will see the following messages traced to the Log at the bottom of the WebIDE.
 
 	![](./images/success.png)
+	
+	> If you see `NetworkError: Unable to claim interface` traced to the console, see the [troubleshooting section](#vcp-driver).
 
 	The device will restart and go back to the main screen. After it connects to Wi-Fi, the **Run** button will become active. Tap the Run button to run the application you installed.
 
@@ -119,6 +130,7 @@ Now you can interact with the device as you would with any other WebThing. You c
 
 This section lists common issues and how to resolve them.
 
+<a id="vcp-driver"></a>
 ### NetworkError: Unable to claim interface
 
 If you have the [Silicon Labs VCP Driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) installed, you will get the following error when you try to install an application on your device from the WebIDE:
@@ -143,6 +155,8 @@ sudo kextload -b com.silabs.driver.CP210xVCPDriver
 ```
 
 ### Touch screen doesn't work properly
+
+If the touch screen on your device doesn't seem to respond correctly to touch, the touch driver needs to be recalibrated. Find someone from Moddable and ask them to recalibrate the touch using the `$MODDABLE/examples/drivers/xpt2046calibrate` app.
 
 ### Device hangs during installation
 
