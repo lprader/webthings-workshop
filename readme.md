@@ -21,7 +21,7 @@ When you power your device, you'll see the following screen.
 
 Before you can run examples to turn the device into a WebThing, you need to connnect it to Wi-Fi. Tap the Wi-Fi button at the top of the screen and the device will scan for available networks. Tapping a network displays an on-screen keyboard that allows you to enter the password.
 
-<img src="./images/wifi-button.png" width=250><img src="./images/wifi-list.png" width= 250><img src="./images/wifi-keyboard.png" width= 250>
+<img src="./images/wifi-list.png" width= 250><img src="./images/wifi-keyboard.png" width= 250>
 
 After you connect to a network, the application saves the Wi-Fi credentials and returns to the main screen. On subsequent boots, it will attempt to connect to the same network so you don't have to enter the password again.
 
