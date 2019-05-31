@@ -68,6 +68,42 @@ The Light and Sign run using only the oddWire development board and do not requi
 |SDA | IO21
 |SCL | IO22
 
+### Viewing and editing the source code
+
+The source code for the examples is included in the WebIDE. To open an example, simply click on the name of the example in the Projects tab.
+
+![](./images/examples.png)
+
+To view different files, go to the File explorer. 
+
+![](./images/explorer.png)
+
+Each example includes three files:
+
+1. `mod.js` - The entry point of the application
+2. `webthings.js` - The Moddable WebThings module
+3. `manifest.json` - The application's [manifest](https://github.com/Moddable-OpenSource/moddable/blob/public/documentation/tools/manifest.md), a file that describes which modules and resources are necessary to build the application
+ 
+### Duplicating examples
+
+The examples are provided as a starting point. You are free to modify them as you see fit. If you want to start a new project using the original source code from an example, you can install additional copies by following these steps:
+
+1. Go to the Projects view in the WebIDE and click **Import GitHub Gist**.
+
+	<img src="./images/projects.png" width=200>
+
+3. Enter a name for the project.
+
+	<img src="./images/input-name.png" width=450>
+	
+4. Enter the gist ID for the example you want to run.
+
+	- On/Off light: `c2e638a2e8ebaff796d67f2d2dd0783d`
+	- Digital sign: `9f526d43030bd3c96fead27eebaf5303`
+	- Thermometer: `514a010e7acff8520f60839ecc749da5`
+
+	<img src="./images/input-gist-id.png" width=450>
+	
 <a id="running-examples"></a>
 ## Running Examples
 
@@ -81,39 +117,23 @@ After you install an example, the device will restart and go back to the main sc
 
 To install an example using WebUSB, take the following steps.
 
-1. Go to the Projects view in the WebIDE and click **Import GitHub Gist**.
-
-	<img src="./images/projects.png" width=200>
-
-3. Enter a name for the project.
-
-	<img src="./images/input-name.png" width=450>
-	
-4. Enter the gist ID for the example you want to run.
-
-	- On/Off light: `c2e638a2e8ebaff796d67f2d2dd0783d`
-	- Digital sign: `9f526d43030bd3c96fead27eebaf5303`
-	- Thermometer: `514a010e7acff8520f60839ecc749da5`
-
-	<img src="./images/input-gist-id.png" width=450>
-
-5. In the top right corner, select **USB** and **ESP32** from the drop-down menus.
+1. In the top right corner, select **USB** and **ESP32** from the drop-down menus.
 
 	<img src="./images/dropdown.png" width=350>
 	
-6. Click the **Flash** button to install the application.
+2. Click the **Flash** button to install the application.
 
 	<img src="./images/flash.png" width=350>
 
 	> If you see `NetworkError: Unable to claim interface` traced to the console, see the [troubleshooting section](#vcp-driver).
 	
-7. Your device will show up as a **CP2104 USB to UART Bridge Controller**. Select the device and click the **Connect** button to connect to it.
+3. Your device will show up as a **CP2104 USB to UART Bridge Controller**. Select the device and click the **Connect** button to connect to it.
 
 	<img src="./images/select-device.png" width=500>
 
 	> If the popup says `No compatible devices found` see the [troubleshooting section](#vcp-driver).
 	
-7. If the installation is successful, you will see the following messages traced to the Log at the bottom of the WebIDE.
+4. If the installation is successful, you will see the following messages traced to the Log at the bottom of the WebIDE.
 
 	![](./images/success.png)
 	
@@ -123,35 +143,19 @@ To install an example using WebUSB, take the following steps.
 
 To install an example using WebSockets, take the following steps.
 
-1. Go to the Projects view in the WebIDE and click **Import GitHub Gist**.
-
-	<img src="./images/projects.png" width=200>
-
-3. Enter a name for the project.
-
-	<img src="./images/input-name.png" width=450>
-	
-4. Enter the gist ID for the example you want to run.
-
-	- On/Off light: `c2e638a2e8ebaff796d67f2d2dd0783d`
-	- Digital sign: `9f526d43030bd3c96fead27eebaf5303`
-	- Thermometer: `514a010e7acff8520f60839ecc749da5`
-
-	<img src="./images/input-gist-id.png" width=450>
-
-5. In the top right corner, select **Wi-Fi** from the drop-down menus.
+1. In the top right corner, select **Wi-Fi** from the drop-down menus.
 
 	<img src="./images/dropdown-wifi.png" width=350>
 	
-5. Enter the hostname of your device. The hostname is the name you screen on the main screen of your device with `.local` added to the end, for example `thing2aa218.local`.
+2. Enter the hostname of your device. The hostname is the name you screen on the main screen of your device with `.local` added to the end, for example `thing2aa218.local`.
 
 	<img src="./images/hostname.png" width=350>
 	
-6. Click the **Flash** button to install the application.
+3. Click the **Flash** button to install the application.
 
 	<img src="./images/flash-websockets.png" width=350>
 	
-7. If the installation is successful, you will see the following messages traced to the Log at the bottom of the WebIDE.
+4. If the installation is successful, you will see the following messages traced to the Log at the bottom of the WebIDE.
 
 	![](./images/success.png)
 	
@@ -261,7 +265,7 @@ If so, make sure you entered the correct hostname in the WebIDE and your device 
 
 ### Touch screen doesn't work properly
 
-If the touch screen on your device doesn't seem to respond correctly to touch, the touch driver may need to be recalibrated. Find someone from Moddable and ask them to recalibrate the touch using the `$MODDABLE/examples/drivers/xpt2046calibrate` app. Alternatively, if you have the Moddable SDK installed, you can build, install, an run the app yourself.
+If the touch screen on your device doesn't seem to respond correctly to touch, the touch driver may need to be recalibrated. Find someone from Moddable and ask them to recalibrate the touch using the `$MODDABLE/examples/drivers/xpt2046calibrate` app. Alternatively, if you have the Moddable SDK installed, you can build, install, and run the app yourself.
 
 <!--### Device hangs during installation-->
 
