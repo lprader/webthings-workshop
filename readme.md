@@ -103,7 +103,9 @@ The examples are provided as a starting point. You are free to modify them as yo
 	- Thermometer: `514a010e7acff8520f60839ecc749da5`
 
 	<img src="./images/input-gist-id.png" width=450>
-	
+
+You may also download the examples from [here](https://www.moddable.com/webthings.zip) if the Gist is not responding because of rate-limiting by GitHub.
+
 <a id="running-examples"></a>
 ## Running Examples
 
