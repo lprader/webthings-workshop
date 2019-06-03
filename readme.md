@@ -98,9 +98,9 @@ The examples are provided as a starting point. You are free to modify them as yo
 	
 4. Enter the gist ID for the example you want to run.
 
-	- On/Off light: `c2e638a2e8ebaff796d67f2d2dd0783d`
-	- Digital sign: `9f526d43030bd3c96fead27eebaf5303`
-	- Thermometer: `514a010e7acff8520f60839ecc749da5`
+	- On/Off light: [`c2e638a2e8ebaff796d67f2d2dd0783d`](https://gist.github.com/lprader/c2e638a2e8ebaff796d67f2d2dd0783d)
+	- Digital sign: [`9f526d43030bd3c96fead27eebaf5303`](https://gist.github.com/lprader/9f526d43030bd3c96fead27eebaf5303)
+	- Thermometer: [`514a010e7acff8520f60839ecc749da5`](https://gist.github.com/lprader/514a010e7acff8520f60839ecc749da5)
 
 	<img src="./images/input-gist-id.png" width=450>
 
